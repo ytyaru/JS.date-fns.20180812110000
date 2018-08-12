@@ -9,11 +9,10 @@
 # コード
 
 ```javascript
-moment.locale(window.navigator.language); // "ja"を想定
-const m = moment(); // 現在日時
+const dateFns = require("date-fns");
 const fmt = "YYYY-MM-DD(ddd) hh:mm:ss.SSS";
-console.log(m.format(fmt));
-const dt = moment("2018-08-12(日) 12:34:56.789", fmt);
+console.log(dateFns.format(new Date(), fmt));
+console.log(dateFns.format(new Date(2000, 0, 1, 12, 34, 56, 789), fmt)); // 2000-01-01(Sat) 12:34:56.789
 ```
 
 # 類似ライブラリ
